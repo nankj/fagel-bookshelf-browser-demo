@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Fagel Bookshelf Browser</title>
+		<link
+			rel="stylesheet"
+			href="style.css"
+			type="text/css"
+			media="screen"
+			title="no title"
+			charset="utf-8"
+		/>
+		<script src="lib/papaparse.min.js" defer></script>
+		<script src="lib/svg-pan-zoom.js" defer></script>
+		<script src="lib/hammer.min.js" defer></script>
+		<script src="js/app.js" type="module" defer></script>
+		<script src="js/events.js" type="module" defer></script>
+	</head>
+
+	<body>
+		<div id="landing-page-root" class="landing-page">
+			<div class="landing-page-title">
+				<!-- <div class="landing-page-visual-container"> -->
+				<!-- 	<div class="landing-page-visual-block" style="width: 3vw; height: 20vh;"></div> -->
+				<!-- 	<div class="landing-page-visual-block" style="width: 4vw; height: 25vh;"></div> -->
+				<!-- 	<div class="landing-page-visual-block" style="width: 3.5vw; height: 15vh;"></div> -->
+				<!-- 	<div class="landing-page-visual-block" style="width: 4.2vw; height: 22vh;"></div> -->
+				<!-- 	<div class="landing-page-visual-block" style="width: 6.2vw; height: 20vh;"></div> -->
+				<!-- 	<div class="landing-page-visual-block" style="width: 5.2vw; height: 26vh;"></div> -->
+				<!-- 	<div class="landing-page-visual-block" style="width: 3.8vw; height: 18vh;"></div> -->
+				<!-- </div> -->
+				<!-- <hr> -->
+				<h1>Fagel Bookshelf Browser</h1>
+				<h2>DEMO</h2>
+				<!-- <h3>DEMO</h3> -->
+				<div id="landing-page-click-container">
+					<span id="landing-page-click-me">Click to start</span>
+				</div>
+			</div>
+			<div id="landing-page-copyright">&copy; Nankivell 2025</div>
+		</div>
+		<div class="container">
+			<div id="svg-container" class="svg-container-sizing"></div>
+			<div id="svg-subshelf-container" class="svg-container-sizing hidden">
+				<button id="subshelf-exit-btn">exit subshelf</button>
+			</div>
+			<!-- <div class="search-container hidden"> -->
+			<!-- 	<div id="search-modal" class=""> -->
+			<!-- 		<h1>catalogue search</h1> -->
+			<!-- 	</div> -->
+			<!-- </div> -->
+
+			<div class="pane-container">
+				<div id="chevron">
+					<div id="chevron-icon"></div>
+				</div>
+
+				<div id="pane">
+					<div id="pane-tab-selection">
+						<button
+							id="metadata-pane-button"
+							class="deselected-tab pane-tab-button"
+						>
+							Data
+						</button>
+						<button
+							id="search-pane-button"
+							class="selected-tab pane-tab-button"
+						>
+							Search
+						</button>
+					</div>
+					<!-- <div id="metadata-placeholder-div" class="pane-content"> -->
+					<!-- 	<h1>[No volume selected]</h1> -->
+					<!-- 	<h2>Please select a volume from the shelves</h2> -->
+					<!-- </div> -->
+					<div id="metadata-pane" class="pane-content hidden">
+						<h1 id="metadata-shelfmark">shelfmark</h1>
+						<h2 id="metadata-heading">heading</h2>
+						<h3 id="metadata-title">title</h3>
+						<h3 id="metadata-imprint">imprint</h3>
+						<hr />
+						<div>
+							<span class="label">Place: </span
+							><span id="metadata-city">city</span>,
+							<span id="metadata-country">country</span>
+						</div>
+						<div>
+							<span class="label">Language: </span
+							><span id="metadata-language">language</span>
+						</div>
+						<div>
+							<span class="label">Subject: </span>
+							<span id="metadata-subjectSection">subjectSection</span
+							><span> -- </span>
+							<span id="metadata-subject">subject</span>
+						</div>
+						<hr />
+						<div>
+							<span class="label">Binding: </span>
+							<span id="metadata-binding">binding</span>
+						</div>
+						<div>
+							<span class="label">Size: </span>
+							<span id="metadata-height">height</span><span> × </span>
+							<span id="metadata-thickness">thickness</span><span> mm </span>
+							<span id="metadata-dimensionsEstimate">isEstimate</span>
+						</div>
+						<div>
+							<span class="label">Lot no: </span>
+							<span id="metadata-lotno">lotno</span>
+						</div>
+					</div>
+					<div id="search-pane" class="pane-content">
+						<br />
+						<div class="search-row">
+							<label>Search any field</label>
+							<input type="text" name="anyfield" class="search-field" />
+						</div>
+						<!-- <br /> -->
+
+						<!-- <br /> -->
+
+						<div class="search-row">
+							<label>Title</label>
+							<input type="text" name="title" class="search-field" />
+						</div>
+
+						<div class="search-row">
+							<label>Author</label>
+							<input type="text" name="author" class="search-field" />
+						</div>
+
+						<div class="search-row">
+							<label for="searchbar">Shelfmark</label>
+							<input
+								type="text"
+								placeholder="Fag._._._"
+								name="shelfmark"
+								class="search-field"
+							/>
+						</div>
+
+						<div class="search-row" id="search-year-range">
+							<label>Year range</label>
+							<div class="date-range-container">
+								<input
+									type="text"
+									placeholder="YYYY"
+									minlength="4"
+									maxlength="4"
+									name="daterangestart"
+									class="search-field"
+								/>
+								<span> — </span>
+								<input
+									type="text"
+									placeholder="YYYY"
+									name="daterangeend"
+									class="search-field"
+								/>
+							</div>
+						</div>
+						<!-- <br /> -->
+
+						<div class="search-row">
+							<label for="country-select">Country</label>
+
+							<select name="country" id="country-select" class="search-field">
+								<option value="">---</option>
+								<option value="ne|">Netherlands</option>
+								<option value="xx|">Unknown</option>
+								<option value="enk">England</option>
+								<option value="gw|">Germany</option>
+								<option value="fr|">France</option>
+								<option value="be|">Belgium</option>
+								<option value="it|">Italy</option>
+								<option value="sp|">Spain</option>
+								<option value="sz|">Switzerland</option>
+								<option value="sw|">Sweden</option>
+								<option value="pl|">Portugal</option>
+							</select>
+						</div>
+						<!-- <br /> -->
+						<div class="search-button-container">
+							<button id="search-btn">Search</button>
+						</div>
+						<div class="search-checkbox-container">
+							<input
+								class="search-checkbox"
+								type="checkbox"
+								name="show-results-on-shelves"
+								id="show-results-on-shelves"
+								value=""
+							/>
+							<label for="show-results-on-shelves">Visualise results</label>
+						</div>
+
+						<div class="search-checkbox-container">
+							<input
+								class="search-checkbox"
+								type="checkbox"
+								name="convert-to-subshelf"
+								id="convert-to-subshelf"
+								value=""
+							/>
+							<label for="convert-to-subshelf">Convert to subshelf</label>
+						</div>
+
+						<div id="search-results" class="pane-content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

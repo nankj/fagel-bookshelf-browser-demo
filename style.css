@@ -1,0 +1,441 @@
+/*
+  Custom CSS Reset by Josh Comeau
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas/*, svg*/ {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	width: 150px;
+	padding: 0;
+	align: right;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+/* End of reset */
+
+html,
+body {
+	margin: 0 auto;
+	padding: 0;
+	background-color: #000;
+	overflow: hidden;
+	font-family: Avenir Next, Avenir, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+	font-size: 0.6em;
+}
+
+h3 {
+	font-weight: 400;
+}
+
+.landing-page {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	/* padding-top: 45vh; */
+	background: #dfdcd1;
+	position: absolute;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#landing-page-click-me {
+	cursor: pointer;
+	font-size: 1.4em;
+	padding: 0.5em;
+	margin: 0.5em;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+#landing-page-click-me:hover {
+	background-color: black;
+	color: white;
+}
+
+#landing-page-click-container {
+	margin-top: 1.8em;
+}
+
+
+#landing-page-copyright {
+	position: absolute;
+	bottom: 0.5em;
+	left: 1em;
+	font-weight: normal;
+}
+
+#chevron {
+	height: 1.7em;
+	width: 0.6em;
+	/* font-size: 25px; */
+	/* font-weight: bold; */
+	padding-left: 0.9em;
+	padding-right: 1.2em;
+
+	padding-top: 0.8em;
+	padding-bottom: 2.51em;
+
+	background-color: #dcdcdc;
+	/* z-index: 10; */
+	/* color: black; */
+	border-radius: 2em 0 0 2em;
+}
+
+.landing-page-title {
+	font-size
+	text-align: center;
+}
+
+
+.landing-page-title > h1 {
+	font-size: 4em;
+	font-style: italic;
+	font-family: serif;
+	text-align: center;
+	border-bottom: 5px solid black;
+	/* padding: 0em 2em; */
+}
+
+
+.landing-page-title > h2 {
+	font-size: 3em;
+}
+
+.landing-page-visual-container {
+	display: flex;
+	flex-direction: row;
+	gap: 0.2em;
+	align-items: flex-end;
+	justify-content: center;
+	margin-bottom: 0.2em;
+}
+
+.landing-page-visual-block {
+	background-color: black;
+}
+
+#chevron-icon {
+	display: inline-block;
+	border-right: 4px solid black;
+	border-bottom: 4px solid black;
+	width: 10px;
+	height: 10px;
+	transform: rotate(-45deg);
+	/* transform: rotate(135deg); */
+	/* transition: transform 200ms; */
+}
+
+.pane-container {
+	height: 100vh;
+	position: absolute;
+	z-index: 100;
+	right: 0px;
+	display: flex;
+	align-items: center;
+}
+
+.search-container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 101;
+	right: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pane-content {
+	margin: 0em 2em;
+	font-size: 1em;
+	height: 100%;
+}
+
+.pane-content h1 {
+	font-size: 2em;
+}
+
+.pane-content h2 {
+	font-size: 1.75em;
+}
+
+.pane-content h3 {
+	font-size: 1.5em;
+}
+
+.pane-content span {
+	font-size: 1.5em;
+}
+
+#pane {
+	padding: 0;
+	height: 95%;
+	width: 0vw;
+	background-color: white;
+	color: black;
+	z-index: 10;
+	transition: width 200ms ease-in-out;
+	margin-top: 2.5%;
+	margin-bottom: 2.5%;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	/* padding-top: 1em; */
+	padding-bottom: 1em;
+	overflow: hidden;
+}
+
+#metadata-pane {
+	overflow: scroll;
+	font-size: 0.8em;
+}
+
+#metadata-pane hr {
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+}
+
+#search-pane {
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.search-row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.5em;
+}
+
+.search-row span {
+	font-size: inherit;
+}
+
+.search-row input, select {
+	width: 60%;
+}
+
+#search-year-range input {
+	width: 80px;
+}
+
+.search-button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 0.8em;
+	margin-bottom: 0.5em;
+}
+
+.date-range-container {
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.svg-container-sizing {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #000000;
+}
+
+.search-checkbox-container {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.search-checkbox {
+	width: 1em;
+	margin-right: 1em;
+}
+
+#search-btn {
+	width: 100%;
+	background-color: #e0e0e0;
+	color: black;
+	border: 1px solid black;
+	padding: 0.3em 0em;
+	font-weight: bold;
+	font-size: 1.3em;
+	border-radius: 5px;
+}
+
+#search-btn:hover {
+	background-color: black;
+	color: white;
+}
+
+#svg-subshelf-container {
+	outline: 3px solid white;
+	outline-offset: -5px;
+}:
+
+.container {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+#pane-tab-selection {
+	display: flex;
+	width: 100%;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+#metadata-pane-button {
+	border-top-left-radius: 5px;
+}
+
+.pane-tab-button {
+	width: 100%;
+	height: 2em;
+	border: 0px;
+	border-radius: 0px;
+	text-align: start;
+	padding-left: 1em;
+	font-family: serif;
+	font-style: italic;
+	/* font-weight: normal; */
+}
+
+.selected-tab {
+	background-color: white;
+	border-bottom: 1px inset #b5b5b5;
+	color: #959595;
+}
+
+.deselected-tab {
+	background-color: #b5b5b5;
+	color: #656565;
+}
+
+.deselected-tab:hover {
+	filter: brightness(80%);
+	cursor: pointer;
+}
+
+.label {
+	font-style: italic;
+}
+
+.book {
+	transition: 100ms transform;
+}
+
+.fallback-texture {
+	opacity: 50%;
+}
+
+.selected-book {
+	/* -webkit-filter: brightness(140%); */
+	/* filter: sepia(0%) saturate(100%) brightness(140%) hue-rotate(0deg); */
+}
+
+.hidden {
+	display: none;
+}
+
+.search-result {
+	margin: 10px 0;
+	border-bottom: 1px solid #000;
+	/* border-radius: 5px; */
+	padding: 5px;
+}
+
+.search-result-hidden {
+	opacity: 5%;
+}
+
+.search-result-clickable {
+	cursor: pointer;
+	color: blue;
+}
+
+.search-results-shelfmark {
+	font-weight: bold;
+}
+
+#subshelf-exit-btn {
+	font-weight: bold;
+	font-size: 2em;
+	width: 10em;
+	padding: 0.5em;
+
+	background-color: white;
+	border: 0px solid white;
+	border-bottom-right-radius: 15px;
+	transform: translate(2px, 2px);
+
+	outline: 3px solid white;
+	outline-offset: -5px;
+}
+
+#subshelf-exit-btn:hover {
+	background-color: #dfdcd1;
+}
+
+#subshelf-exit-btn:active {
+	background-color: grey;
+}
+
+#search-results {
+	/* max-height: 100%; */
+	overflow: scroll;
+	height: 45vh;
+	border-top: 1px dashed black;
+	margin: 0 auto;
+	margin-top: 1em;
+}
+
+.book-not-in-tcd {
+	outline: 3px dashed grey;
+	outline-offset: -5px;
+	border-radius: 5px;
+}
+
+.book-not-in-tcd.search-result-hidden {
+	outline: 3px dashed rgba(10,10,10);
+}
+
+
+/* Fag.P.4.19 */
